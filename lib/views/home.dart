@@ -1,7 +1,7 @@
 import 'package:alertatemprana/libraries/PaletteColors.dart';
 import 'package:flutter/material.dart';
 import './vistaAlumno.dart';
-
+import './informacionAlumno.dart';
 
 class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
@@ -20,7 +20,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    
     _getOptionPage();
     _tabController = TabController(
         vsync: this, length: views.length, initialIndex: _selectedIndex);
@@ -38,7 +37,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.white,
         body: TabBarView(
           children: views,
@@ -57,8 +56,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   List<BottomNavigationBarItem> _menuNavegacion() {
     return [
       BottomNavigationBarItem(
-          icon: Icon(Icons.settings, size: _selectedIndex == 0 ? 35 : 25),
-          title: Text('Gestionar')),
+          icon: Icon(Icons.school, size: _selectedIndex == 0 ? 35 : 25),
+          title: Text('Academico')),
       BottomNavigationBarItem(
         icon: Icon(
           Icons.account_circle,
@@ -68,7 +67,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       ),
       BottomNavigationBarItem(
         icon: Icon(
-          Icons.notifications_active,
+          Icons.assessment,
           size: _selectedIndex == 2 ? 35 : 25,
         ),
         title: Text('Indicadores'),
@@ -85,7 +84,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   void _getOptionPage() {
     views = [
-      VistaAlumno(),
+      InformacionAlumno(),
       VistaAlumno(),
       VistaAlumno(),
     ];

@@ -283,7 +283,9 @@ class _VistaAlumnoState extends State<VistaAlumno> {
     return Padding(
       padding: const EdgeInsets.only(top: 11),
       child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/tutorias');
+          },
           textColor: Colors.white,
           color: PaletteColors.blueButton,
           shape: RoundedRectangleBorder(
